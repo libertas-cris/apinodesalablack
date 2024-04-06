@@ -63,7 +63,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
 email: ${email}
 senha: ${password}
     
-Lembre-se de guardar a sua senha. *Agora você precisa entrar em contato com o seu consultor para *ATIVAR* o seu acesso.`
+Lembre-se de guardar a sua senha. *Agora você precisa entrar em contato com o seu consultor para ATIVAR o seu acesso.*`
     })
   })
     .then(response => {
