@@ -8,14 +8,16 @@ import { updateTask } from "./controllers/updateTask";
 import { updateEventDate } from "./controllers/updateEventDate";
 import { getUserEventDate } from "./controllers/getUserEventDate";
 
+import { env } from "../env";
+
 export async function appRoutes(app:FastifyInstance){
 
-  app.post('/user', register),
-  app.get('/users', getAllUsers),
-  app.get('/tasks/:id', getUserTasks),
-  app.post('/login', createSession),
-  app.put('/user/update/:id/:isChecked', updateUser ),
-  app.put('/task/update/:userId/:taskId/:taskStatus', updateTask ),
-  app.put('/user/update/event', updateEventDate),
-  app.get('/user/update/event/:id', getUserEventDate );
+  app.post(`${env.CONTEXT_PATH}/user`, register),
+  app.get(`${env.CONTEXT_PATH}/users`, getAllUsers),
+  app.get(`${env.CONTEXT_PATH}/tasks/:id`, getUserTasks),
+  app.post(`${env.CONTEXT_PATH}/login`, createSession),
+  app.put(`${env.CONTEXT_PATH}/user/update/:id/:isChecked`, updateUser ),
+  app.put(`${env.CONTEXT_PATH}/task/update/:userId/:taskId/:taskStatus`, updateTask ),
+  app.put(`${env.CONTEXT_PATH}/user/update/event`, updateEventDate),
+  app.get(`${env.CONTEXT_PATH}/user/update/event/:id`, getUserEventDate );
 }
