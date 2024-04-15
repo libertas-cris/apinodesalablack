@@ -26,7 +26,7 @@ jobs:
     - name: Install Prisma CLI
       run: npm install prisma --save-dev
     - name: Run Prisma Migration
-      run: prisma migrate deploy
+      run: prisma migrate dev
     - run: |
         touch .env
         echo "${{ secrets.PRD_ENV_FILE }}" > .env
