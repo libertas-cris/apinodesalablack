@@ -23,6 +23,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - name: Install Prisma CLI
+      run: npm install prisma --save-dev
+    - name: Run Prisma Migration
+      run: npx prisma migrate deploy
     - run: |
         touch .env
         echo "${{ secrets.PRD_ENV_FILE }}" > .env
+    - run: pm2 restart BackendAPI
