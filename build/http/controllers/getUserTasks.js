@@ -33,7 +33,7 @@ var import_config = require("dotenv/config");
 var import_zod = require("zod");
 var envSchema = import_zod.z.object({
   NODE_ENV: import_zod.z.enum(["dev", "test", "production"]).default("dev"),
-  PORT: import_zod.z.coerce.number().default(3333),
+  PORT: import_zod.z.coerce.number().default(3340),
   JWT_SECRET: import_zod.z.string().default("apisalablack"),
   CONTEXT_PATH: import_zod.z.string().default("/api")
 });
