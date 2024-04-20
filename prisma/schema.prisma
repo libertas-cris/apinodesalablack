@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://docker:docker@localhost:5432/apisalablack?schema=public"
+  url      = "postgresql://salablackdb_owner:xwrvSCf8ZdJ5@ep-bitter-lake-a5owxtju.us-east-2.aws.neon.tech/salablackdb?sslmode=require"
 }
 
 model User {
