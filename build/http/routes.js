@@ -33,8 +33,8 @@ var import_zod = require("zod");
 var envSchema = import_zod.z.object({
   NODE_ENV: import_zod.z.enum(["dev", "test", "production"]).default("dev"),
   PORT: import_zod.z.coerce.number().default(3333),
-  JWT_SECRET: import_zod.z.string(),
-  CONTEXT_PATH: import_zod.z.string()
+  JWT_SECRET: import_zod.z.string().default("apisalablack"),
+  CONTEXT_PATH: import_zod.z.string().default("/api")
 });
 var _env = envSchema.safeParse(process.env);
 if (_env.success === false) {
