@@ -13,7 +13,8 @@ app.register(fastifyJwt, {
 })
 
 app.register(fastifyCors, {
-  origin: '*'
+  origin: '*',
+  methods: '*'
 })
 
 app.register(appRoutes);
