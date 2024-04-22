@@ -17,7 +17,7 @@ export async function appRoutes(app:FastifyInstance){
   app.get(`${env.CONTEXT_PATH}/tasks/:id`, getUserTasks),
   app.post(`${env.CONTEXT_PATH}/login`, createSession),
   app.put(`${env.CONTEXT_PATH}/user/update/:id/:isChecked`, updateUser ),
-  app.put(`${env.CONTEXT_PATH}/task/update/:userId/:taskId/:taskStatus`, updateTask ),
+  app.patch(`${env.CONTEXT_PATH}/task/update/:userId/:taskId/:taskStatus`, updateTask ),
   app.put(`${env.CONTEXT_PATH}/user/update/event`, updateEventDate),
   app.get(`${env.CONTEXT_PATH}/user/update/event/:id`, getUserEventDate );
 }
