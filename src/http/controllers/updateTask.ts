@@ -6,10 +6,15 @@ export async function updateTask(request:FastifyRequest, reply:FastifyReply) {
   const validateTaskUpdate = z.object({
     userId: z.string().uuid(),
     taskId: z.string().uuid(),
+  })
+
+  const validateTaskStatus = z.object({
     taskStatus: z.string()
   })
 
-  const { userId, taskId, taskStatus} = validateTaskUpdate.parse(request.params);
+  const { userId, taskId} = validateTaskUpdate.parse(request.params);
+  
+  const {taskStatus } = validateTaskStatus.parse(request.body);
 
   const statusFormated = parseInt(taskStatus);
 
