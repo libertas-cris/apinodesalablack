@@ -29,7 +29,7 @@ export async function createSession(request:FastifyRequest, reply:FastifyReply){
     }
 
     const token = await reply.jwtSign({
-      event_date: userExists.event_date
+      email: userExists.email
     }, {
       sub: userExists.id,
       expiresIn: '1d'
